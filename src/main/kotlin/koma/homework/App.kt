@@ -7,6 +7,7 @@ import org.apache.kafka.streams.StreamsBuilder
 import org.apache.kafka.streams.kstream.Consumed
 import org.apache.kafka.streams.kstream.Printed
 import java.util.concurrent.CountDownLatch
+import kotlin.system.exitProcess
 
 
 /**
@@ -41,8 +42,8 @@ fun main() {
         streams.start()
         latch.await()
     } catch (e: Throwable) {
-        System.exit(1);
+        exitProcess(1)
     }
-    System.exit(0);
-    
+    exitProcess(0)
+
 }
